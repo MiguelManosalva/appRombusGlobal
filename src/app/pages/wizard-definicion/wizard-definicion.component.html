@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <div class="title mb-3">
+    Cuéntanos de que trata tu proyecto
+  </div>
+  <div class="sub-title mb-3">
+    ¡Explica brevemente en qué consiste tu necesidad y en 4 pasos tendrás un
+    plan a tu medida!
+  </div>
+
+  <!-- #####  FORMULARIO: DEFINICIÓN ##### -->
+  <form
+    [formGroup]="formulario"
+    (ngSubmit)="guardarForm()"
+    (keydown.enter)="$event.preventDefault()"
+  >
+    <!-- Título-->
+    <div class="form-group">
+      <label for="titulo">Ponle un título fácil, que identifique tu rquerimiento *</label>
+      <div class="form-group mb-0">
+        <input
+          type="text"
+          formControlName="titulo"
+          class="form-control"
+          placeholder="Título del proyecto (Ej: ...)"
+          maxlength="50"
+          [ngClass]="{
+            'is-invalid':
+              formulario.get('titulo').invalid &&
+              formulario.get('titulo').touched
+          }"
+        />
+      </div>
+      <small
+        class="text-danger animated fadeIn"
+        *ngIf="
+          formulario.get('titulo').invalid && formulario.get('titulo').touched
+        "
+      >
+        Debe ingresar título válido
+      </small>
+    </div>
+
+    <!-- Descripción-->
+    <div class="form-group">
+      <label for="descripcion">Agrega un párrafo que nos ayude a entender lo que necesitas o el objetivo que deseas lograr *</label>
+      <div class="form-group form-textarea mb-0">
+          <textarea
+          class="form-control"
+          formControlName="descripcion"
+          placeholder="Descripción del proyecto"
+          maxlength="50"
+          rows="6"
+          [ngClass]="{
+            'is-invalid':
+              formulario.get('descripcion').invalid &&
+              formulario.get('descripcion').touched
+          }">
+
+          </textarea>
+      </div>
+      <small
+        class="text-danger animated fadeIn"
+        *ngIf="
+          formulario.get('descripcion').invalid && formulario.get('descripcion').touched
+        "
+      >
+        Debe ingresar descripción válida
+      </small>
+    </div>
+
+    <!-- obligatorio-->
+    <div class="form-group">
+        <label>* obligatorio </label>
+    </div>
+
+    <!-- Botón enviar-->
+    <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-rombus d-block ml-auto">Continuar</button>
+    </div>
+
+  </form>
+</div>

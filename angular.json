@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "appRombusGlobal"
+    }
+  },
+  "defaultProject": "appRombusGlobal",
+  "cli": {
+    "analytics": "7e2228e5-8dcd-434d-a8a9-09200eb4997e"
+  }
 }
