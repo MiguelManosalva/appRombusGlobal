@@ -23,6 +23,16 @@ export class WizardDefinicionComponent implements OnInit {
   }
 
   public guardarForm(): void{
+    const wizard: any = {
+      titulo: this.formulario.get('titulo').value,
+      descripcion: this.formulario.get('descripcion').value
+    }
+    if(this.formulario.invalid){
+      console.log("INVALID");
+      
+    }
+
+    console.log("wizard: ", wizard);
     
   }
 
