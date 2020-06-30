@@ -12,7 +12,7 @@
       <div class="card card-esp shadow mb-4 mt-3">
         <div
           class="card-body cursor text-center"
-          (click)="especialidad = e"
+          (click)="seleccionarEspecialidad(e)"
           [ngClass]="{
             'card-active text-white': especialidad.titulo == e.titulo,
             'text-muted': especialidad.titulo != e.titulo

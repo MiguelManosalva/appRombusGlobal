@@ -15,5 +15,21 @@
     { "titulo": "Relaciones Públicas", "id": 12 },
     { "titulo": "Marketing de Influencers", "id": 13 },
     { "titulo": "Investigación y Análisis de Mercado", "id": 14 }
+  ],
+  "disenio": [
+    { "titulo": "Creación de Marca e Identidad Corporativa", "id": 1 },
+    { "titulo": "Diseño Web", "id": 2 },
+    { "titulo": "Diseño UX: Experiencia", "id": 3 },
+    { "titulo": "Diseño Gráfico", "id": 4 },
+    { "titulo": "Diseño Editorial", "id": 5 },
+    { "titulo": "Diseño Industrial", "id": 6 },
+    { "titulo": "Diseño de Idumentaria y Moda", "id": 6 },
+    { "titulo": "Redacción", "id": 7 },
+    { "titulo": "Traducción a idiomas", "id": 8 },
+    { "titulo": "Fotografía", "id": 9 },
+    { "titulo": "Illustraciones", "id": 10 },
+    { "titulo": "Animaciones", "id": 11 },
+    { "titulo": "Video", "id": 12 },
+    { "titulo": "Audio y Sonido", "id": 13 }
   ]
 }

@@ -15,17 +15,23 @@ export class CategoriaEspecialidadComponent implements OnInit {
   public categorias: any[];
   public subCategorias: any[];
   public categoria: string = '';
+  public subCategoria: string = '';
+  public habilidades: any[] = [];
 
   constructor( private _especialidad: EspecialidadService) {
   }
 
   ngOnInit(): void {
-    console.log("this.especialidad.id: ", this.especialidad);
-
     this.obtenerCategorias(this.especialidad.id);
   }
 
-  public obtenerCategorias(idEspecialidad){
+  ngOnChange(){
+    if(this.especialidad.id){
+      this.obtenerCategorias(this.especialidad.id);
+    }
+  }
+
+  private obtenerCategorias(idEspecialidad: any): void{
     this.cargando = true;
     this._especialidad.obtenerCategorias(idEspecialidad).subscribe( res => {
       this.categorias = res;
@@ -33,17 +39,17 @@ export class CategoriaEspecialidadComponent implements OnInit {
     })
   }
 
-  public obtenerSubCategorias(idCategoria){
+  public seleccionarCategoria(categoria: any): void {
+    this.categoria = categoria;
+    this.obtenerSubCategorias(this.especialidad.id);
+  }
+
+  private obtenerSubCategorias(idCategoria: any): void{
     this.cargando = true;
     this._especialidad.obtenerSubCategorias(idCategoria).subscribe( res => {
       this.subCategorias = res;
       this.cargando = false;
     })
-  }
-
-  public borrarHabilidad():void{
-    console.log("hola mundo");
-
   }
 
 

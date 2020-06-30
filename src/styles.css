@@ -26,17 +26,6 @@ button {
   background-color: #123a40;
 }
 
-.btn-nav-rombus {
-  color: #fff;
-  border-radius: 50px;
-  border: solid 1px #fff;
-  background-color: #24a4b4;
-}
-
-.btn-nav-rombus:hover {
-  color: #fff;
-  background-color: #177380;
-}
 
 /* Wizard Step */
 .step {
@@ -118,6 +107,35 @@ button {
   font-size: 20px;
 }
 
+/* List */
+.list-group-flush > .list-group-item {
+  border-width: 0 0 0px;
+  padding: 0.25rem 1.25rem;
+}
+
+/* Buttons */
+.btn-nav-rombus {
+  color: #fff;
+  border-radius: 50px;
+  border: solid 1px #fff;
+  background-color: #24a4b4;
+}
+
+.btn-nav-rombus:hover {
+  color: #fff;
+  background-color: #177380;
+}
+
+.btn-rombus:hover {
+  color: #fff;
+  background-color: #24a4b4;
+}
+
+.btn-rombus-input:hover {
+  color: #fff;
+  background-color: #4a4a4a;
+}
+
 .btn-rombus {
   padding: .8rem 5rem;
   color: #fff;
@@ -136,20 +154,21 @@ button {
   background-color: #666666;
 }
 
-.btn-rombus:hover {
+.btn-tag {
+  width: 100%;
+  padding: .375rem 1.75rem;
   color: #fff;
-  background-color: #24a4b4;
+  font-weight: 300;
+  text-transform: none;
+  border-radius: 0px;
+  background-color: #dc3545;
+  border: 0px;
+  clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
 }
 
-.btn-rombus-input:hover {
+.btn-tag:hover{
+  background-color: #dc3545;
   color: #fff;
-  background-color: #4a4a4a;
-}
-
-/* List */
-.list-group-flush > .list-group-item {
-  border-width: 0 0 0px;
-  padding: 0.25rem 1.25rem;
 }
 
 

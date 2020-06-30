@@ -10,7 +10,7 @@
         <ul class="list-group list-group-flush py-2">
           <li
             *ngFor="let c of categorias"
-            (click)="categoria = c.titulo"
+            (click)="seleccionarCategoria(c.titulo)"
             class="list-group-item text-muted cursor"
             [ngClass]="{
               'card-active text-white': categoria == c.titulo,
@@ -26,37 +26,30 @@
         </ul>
       </div>
       <!-- Sub-Categorias-->
-      <div class="col-md-5"></div>
+      <div class="col-md-5 pl-0">
+        <ul *ngIf="categoria != ''" class="list-group list-group-flush py-2 animate__animated animate__fadeIn">
+          <li
+            *ngFor="let sc of subCategorias"
+            (click)="subCategoria = sc.titulo"
+            class="list-group-item text-muted cursor"
+            [ngClass]="{
+              'card-active text-white': subCategoria == sc.titulo,
+              'text-muted': subCategoria != sc.titulo
+            }"
+            [ngStyle]="{
+              'background-color':
+                subCategoria == sc.titulo ? especialidad.color : ''
+            }"
+          >
+            {{ sc.titulo }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="sub-title mb-3">
-  Si lo deseas puedes agregar hasta 5 habilidades que consideres necesarias.
-</div>
-
-<div class="form-group col-md-8 d-flex p-0">
-  <input
-    type="text"
-    class="form-control m-0"
-    placeholder="Ingresar habilidad (Ej: Ilustración)..."
-    maxlength="50"
-  />
-  <button type="submit" class="btn btn-lg btn-rombus-input m-0">
-    <span class="d-flex">
-      Agregar
-      <span class="ml-2"> +</span>
-    </span>
-  </button>
-</div>
-
-<div class="d-flex">
-
-  <span class="badge fa-2x has-badge" data-count="x" (click)="borrarHabilidad()">
-    <button type="button" class="d-block btn btn-danger m-0">
-      Notifications
-    </button>
-  </span>
-
-</div>
+<app-habilidades
+  [color]="especialidad.color"
+></app-habilidades>
 

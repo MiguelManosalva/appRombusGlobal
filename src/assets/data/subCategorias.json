@@ -1,0 +1,9 @@
+{
+  "estrategia": [
+    { "titulo": "Marca Líder", "id": 1 },
+    { "titulo": "Empresa Grande", "id": 2 },
+    { "titulo": "PyME", "id": 3 },
+    { "titulo": "Micro Empresa / Emprendimiento", "id": 4 },
+    { "titulo": "Insitución / ONG", "id": 5 }
+  ]
+}

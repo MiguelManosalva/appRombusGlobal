@@ -22,4 +22,8 @@ export class WizardEspecialidadComponent implements OnInit {
     })
   }
 
+  seleccionarEspecialidad(especialidad: any): void{
+    this.especialidad = especialidad;
+  }
+
 }

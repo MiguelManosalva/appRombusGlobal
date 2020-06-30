@@ -35,7 +35,7 @@ export class EspecialidadService {
               res = res.estrategia;
               break;
             case 2:
-              res = res.estrategia;
+              res = res.disenio;
               break;
             case 3:
               res = res.estrategia;

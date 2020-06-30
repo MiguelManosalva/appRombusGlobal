@@ -15,6 +15,7 @@ import { WizardTipoPresentacionComponent } from './pages/wizard-tipo-presentacio
 import { ResumenComponent } from './pages/resumen/resumen.component';
 import { StepComponent } from './components/step/step.component';
 import { CategoriaEspecialidadComponent } from './pages/wizard-especialidad/categoria-especialidad/categoria-especialidad.component';
+import { HabilidadesComponent } from './pages/wizard-especialidad/habilidades/habilidades.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CategoriaEspecialidadComponent } from './pages/wizard-especialidad/cate
     WizardTipoPresentacionComponent,
     ResumenComponent,
     StepComponent,
-    CategoriaEspecialidadComponent
+    CategoriaEspecialidadComponent,
+    HabilidadesComponent
   ],
   imports: [
     BrowserModule,
