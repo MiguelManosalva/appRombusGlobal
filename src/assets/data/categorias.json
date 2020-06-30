@@ -1,0 +1,19 @@
+{
+  "estrategia": [
+    { "titulo": "Desarrollo de Negocio Digital", "id": 1 },
+    { "titulo": "Marca e Imagen Corporativa / Branding", "id": 2 },
+    { "titulo": "Estrategia de Contenidos y Comunicación", "id": 3 },
+    { "titulo": "Marketing de Social Media", "id": 4 },
+    { "titulo": "Reputación on line", "id": 5 },
+    { "titulo": "Estrategia de Crecimiento (Growth Hacking)", "id": 6 },
+    { "titulo": "Estategia de experiencia de Consumidor", "id": 6 },
+    { "titulo": "Generación de Prospectos (Leads)", "id": 7 },
+    { "titulo": "Gestión de Campaña Digital", "id": 8 },
+    { "titulo": "Optimización de Buscadores (SEO)", "id": 9 },
+    { "titulo": "Marketing en Buscadores (SEM)", "id": 10 },
+    { "titulo": "Estrategia de Ventas on line", "id": 11 },
+    { "titulo": "Relaciones Públicas", "id": 12 },
+    { "titulo": "Marketing de Influencers", "id": 13 },
+    { "titulo": "Investigación y Análisis de Mercado", "id": 14 }
+  ]
+}

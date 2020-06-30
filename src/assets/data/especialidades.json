@@ -1,0 +1,8 @@
+{
+  "especialidadades":  [
+    { "titulo": "Estrategia y Marketing", "icon": "fa-binoculars", "color": "#d01d00", "id": 1 },
+    { "titulo": "Diseño y Creatividad", "icon": "fa-eye", "color": "#fcb040", "id": 2 },
+    { "titulo": "Publicidad y Campaña", "icon": "fa-thumbs-up", "color": "#0e76bc", "id": 3 },
+    { "titulo": "Programación y Tecnología", "icon": "fa-code", "color": "#9f1f63", "id": 4 }
+  ]
+}

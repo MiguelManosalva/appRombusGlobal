@@ -1,1 +1,47 @@
-<p>wizard-especialidad works!</p>
+<div class="container-fluid" *ngIf="especialidades">
+  <div class="title mb-3">
+    Selecciona el área profesional adecuada
+  </div>
+  <div class="sub-title mb-3">
+    Elige el servicio que enfoca tu necesidad principal
+  </div>
+
+  <!-- #####  SERVICIOS  ##### -->
+  <div class="row mb-3">
+    <div *ngFor="let e of especialidades" class="col-md-3">
+      <div class="card card-esp shadow mb-4 mt-3">
+        <div
+          class="card-body cursor text-center"
+          (click)="especialidad = e"
+          [ngClass]="{
+            'card-active text-white': especialidad.titulo == e.titulo,
+            'text-muted': especialidad.titulo != e.titulo
+          }"
+          [ngStyle]="{
+            'background-color': especialidad.titulo == e.titulo ? e.color : ''
+          }"
+        >
+          <div class="content-center">
+            <!-- <fa-icon [icon]="e.icon" style="font-size: 30px;"></fa-icon> -->
+            <i [class]="'fa ' + e.icon + ' fa-2x'" aria-hidden="true"></i>
+            <span class="d-block">{{ e.titulo }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #####  CATEGORIAS  ##### -->
+  <app-categoria-especialidad
+    *ngIf="especialidad.titulo"
+    class="animate__animated animate__fadeIn"
+    [especialidad]="especialidad"
+  ></app-categoria-especialidad>
+
+  <!-- Botón enviar-->
+  <div class="form-group mt-5">
+    <button type="submit" class="btn btn-lg btn-rombus d-block ml-auto">
+      Continuar
+    </button>
+  </div>
+</div>

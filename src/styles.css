@@ -1,98 +1,176 @@
-/* Navbar */
-*{
-    overflow-x: hidden;
+/* General */
+* {
+  overflow-x: hidden;
 }
 
-body{
-    background-color: #f2f2f2;
+body {
+  background-color: #f2f2f2;
+}
+
+.cursor {
+  cursor: pointer;
 }
 
 /* Navbar */
-.navbar-rombus>.navbar-nav>.nav-item, button {
-    text-transform: uppercase;
-    color: #fff;
-    letter-spacing: 1.7px;
-    margin-bottom: auto !important;
-    margin-top: auto !important;
-    margin-left: 10px;
+.navbar-rombus > .navbar-nav > .nav-item,
+button {
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1.7px;
+  margin-bottom: auto !important;
+  margin-top: auto !important;
+  margin-left: 10px;
 }
 
 .bg-rombus {
   background-color: #123a40;
 }
 
-.btn-nav-rombus{
-    color: #fff;
-    border-radius: 50px;
-    border: solid 1px #fff;
-    background-color: #24a4b4;
+.btn-nav-rombus {
+  color: #fff;
+  border-radius: 50px;
+  border: solid 1px #fff;
+  background-color: #24a4b4;
 }
 
-.btn-nav-rombus:hover{
-    color: #fff;
-    background-color: #177380;
+.btn-nav-rombus:hover {
+  color: #fff;
+  background-color: #177380;
 }
 
 /* Wizard Step */
-.step{
-    position: relative;
-    border-radius: 50%;
-    background-color: #00a2c2;
-    width: 50px;
-    height: 50px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
+.step {
+  position: relative;
+  border-radius: 50%;
+  background-color: #00a2c2;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.step-center{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
+.step-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
-.title-step{
-    font-size: 24px;
-    color:#07a0c0;
-    text-transform: uppercase;
+.title-step {
+  font-size: 24px;
+  color: #07a0c0;
+  text-transform: uppercase;
 }
 
 /* Wizard */
-.title{
-    font-weight: 300;
-    font-size: 40px;
+.title {
+  font-weight: 300;
+  font-size: 40px;
 }
-.sub-title{
-    font-weight: 300;
-    font-size: 24px;
+
+.sub-title {
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.card-esp {
+  border: 0px;
+  height: 170px;
+}
+
+.card-active {
+  background-color: #d01d00;
+  transition: 0.2s ease-in;
+}
+
+.content-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 0px 36px -12px rgba(0, 0, 0, 0.82);
+  -moz-box-shadow: 0px 0px 36px -12px rgba(0, 0, 0, 0.82);
+  box-shadow: 0px 0px 36px -12px rgba(0, 0, 0, 0.82);
+}
+
+.border-categoria {
+  border-right: 1px solid #f2f2f2;
+  padding-right: 0;
 }
 
 /* Formulario */
-.form-control{
-    border-radius: 0;
-    border: 1px solid #fff;
-    padding: 1.775rem 1.5rem;
-    font-size: 22px;
-    font-weight: 500; 
+.form-control {
+  border-radius: 0;
+  border: 1px solid #fff;
+  padding: 1.775rem 1.5rem;
+  font-size: 22px;
+  font-weight: 500;
 }
 
-.form-group > label{
-    font-weight: 300;
-    font-size: 20px;
+.form-group > label {
+  font-weight: 300;
+  font-size: 20px;
 }
 
-.btn-rombus{
-    padding: 1.775rem 7rem;
-    color: #fff;
-    border-radius: 0px;
-    background-color: #00a2c2;
+.btn-rombus {
+  padding: .8rem 5rem;
+  color: #fff;
+  text-transform: capitalize;
+  border-radius: 0px;
+  background-color: #00a2c2;
 }
 
-.btn-rombus:hover{
-    color: #fff;
-    background-color: #24a4b4;
+.btn-rombus-input {
+  padding: .8rem 1.4rem;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0px;
+  background-color: #666666;
+}
+
+.btn-rombus:hover {
+  color: #fff;
+  background-color: #24a4b4;
+}
+
+.btn-rombus-input:hover {
+  color: #fff;
+  background-color: #4a4a4a;
+}
+
+/* List */
+.list-group-flush > .list-group-item {
+  border-width: 0 0 0px;
+  padding: 0.25rem 1.25rem;
 }
 
 
+/* Badge */
+.badge{
+  position: relative;
+  font-size: 24px;
+  color: #c4c4c3;
+  cursor: pointer;
+}
+
+.badge[data-count]:after{
+  position:absolute;
+  left:0%;
+  top:1%;
+  content: attr(data-count);
+  font-size:40%;
+  padding:.6em;
+  border-radius:50%;
+  line-height:.75em;
+  background-color: #fff;
+  border: 1px solid #c2c2c2;
+  font-weight:bold;
+}

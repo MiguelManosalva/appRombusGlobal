@@ -1,0 +1,62 @@
+<div class="sub-title mb-3">
+  Marca dentro del área elegida, la categoría y subcategoria que correspondan *
+</div>
+
+<div class="card mb-3">
+  <div class="card-body p-0">
+    <div class="row">
+      <!-- Categorias-->
+      <div class="col-md-7" [ngClass]="{ 'border-categoria': categoria != '' }">
+        <ul class="list-group list-group-flush py-2">
+          <li
+            *ngFor="let c of categorias"
+            (click)="categoria = c.titulo"
+            class="list-group-item text-muted cursor"
+            [ngClass]="{
+              'card-active text-white': categoria == c.titulo,
+              'text-muted': categoria != c.titulo
+            }"
+            [ngStyle]="{
+              'background-color':
+                categoria == c.titulo ? especialidad.color : ''
+            }"
+          >
+            {{ c.titulo }}
+          </li>
+        </ul>
+      </div>
+      <!-- Sub-Categorias-->
+      <div class="col-md-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="sub-title mb-3">
+  Si lo deseas puedes agregar hasta 5 habilidades que consideres necesarias.
+</div>
+
+<div class="form-group col-md-8 d-flex p-0">
+  <input
+    type="text"
+    class="form-control m-0"
+    placeholder="Ingresar habilidad (Ej: Ilustración)..."
+    maxlength="50"
+  />
+  <button type="submit" class="btn btn-lg btn-rombus-input m-0">
+    <span class="d-flex">
+      Agregar
+      <span class="ml-2"> +</span>
+    </span>
+  </button>
+</div>
+
+<div class="d-flex">
+
+  <span class="badge fa-2x has-badge" data-count="x" (click)="borrarHabilidad()">
+    <button type="button" class="d-block btn btn-danger m-0">
+      Notifications
+    </button>
+  </span>
+
+</div>
+

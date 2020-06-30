@@ -13,7 +13,7 @@ const routes: Routes = [
     data: { titulo: 'Definición' },
   },
   {
-    path: 'especialdad',
+    path: 'especialidad',
     component: WizardEspecialidadComponent,
     data: { titulo: 'Especialidad' },
   },
