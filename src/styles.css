@@ -193,3 +193,13 @@ button {
   border: 1px solid #c2c2c2;
   font-weight:bold;
 }
+
+/* Footer */
+footer{
+  background-color: #eaeaea;
+  position: fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+}

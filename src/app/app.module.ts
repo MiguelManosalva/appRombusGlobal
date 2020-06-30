@@ -16,6 +16,7 @@ import { ResumenComponent } from './pages/resumen/resumen.component';
 import { StepComponent } from './components/step/step.component';
 import { CategoriaEspecialidadComponent } from './pages/wizard-especialidad/categoria-especialidad/categoria-especialidad.component';
 import { HabilidadesComponent } from './pages/wizard-especialidad/habilidades/habilidades.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HabilidadesComponent } from './pages/wizard-especialidad/habilidades/ha
     ResumenComponent,
     StepComponent,
     CategoriaEspecialidadComponent,
-    HabilidadesComponent
+    HabilidadesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
