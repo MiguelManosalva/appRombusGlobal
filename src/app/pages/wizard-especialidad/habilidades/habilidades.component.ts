@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-habilidades',
@@ -9,17 +9,22 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HabilidadesComponent implements OnInit {
 
   @Input() public color: string = '';
+  @Output() private obtenerHabilidades: EventEmitter<any> = new EventEmitter<any>();
+
   public habilidades: any[] = ['Diseño de Interfaz de Usuario'];
   public habilidad: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
+    // Enviar habilidades por default
+    this.obtenerHabilidades.emit(this.habilidades);
   }
 
   public agregarHabilidad(): void{
     if(this.habilidad == '' || this.habilidad.trim() == '') return;
     this.habilidades.push(this.habilidad);
+    this.obtenerHabilidades.emit(this.habilidades);
     this.habilidad = '';
   }
 

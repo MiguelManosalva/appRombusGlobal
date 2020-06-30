@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class WizardDefinicionComponent implements OnInit {
 
   public formulario: FormGroup;
-
+  public formValido: boolean = true;
 
   constructor(
     public fb: FormBuilder,
@@ -31,12 +31,13 @@ export class WizardDefinicionComponent implements OnInit {
       titulo: this.formulario.get('titulo').value,
       descripcion: this.formulario.get('descripcion').value
     }
-    this._router.navigate(['/especialidad'])
-    if(this.formulario.invalid){
-      console.log("INVALID");
+    if(this.formulario.invalid)
+      this.formValido = false;
+    else {
+      this.formValido = true;
+      this._router.navigate(['/especialidad'])
     }
 
-    console.log("wizard: ", wizard);
   }
 
 }

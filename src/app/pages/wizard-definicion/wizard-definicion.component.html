@@ -26,14 +26,14 @@
           [ngClass]="{
             'is-invalid':
               formulario.get('titulo').invalid &&
-              formulario.get('titulo').touched
+              formulario.get('titulo').touched || !formValido
           }"
         />
       </div>
       <small
         class="text-danger animated fadeIn"
         *ngIf="
-          formulario.get('titulo').invalid && formulario.get('titulo').touched
+          formulario.get('titulo').invalid && formulario.get('titulo').touched || !formValido
         "
       >
         Debe ingresar título válido
@@ -53,7 +53,7 @@
           [ngClass]="{
             'is-invalid':
               formulario.get('descripcion').invalid &&
-              formulario.get('descripcion').touched
+              formulario.get('descripcion').touched || !formValido
           }">
 
           </textarea>
@@ -61,7 +61,7 @@
       <small
         class="text-danger animated fadeIn"
         *ngIf="
-          formulario.get('descripcion').invalid && formulario.get('descripcion').touched
+          formulario.get('descripcion').invalid && formulario.get('descripcion').touched || !formValido
         "
       >
         Debe ingresar descripción válida

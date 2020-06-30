@@ -36,11 +36,21 @@
     *ngIf="especialidad.titulo"
     class="animate__animated animate__fadeIn"
     [especialidad]="especialidad"
+    (obtenerCategoria)="categoria = $event"
+    (obtenerSubCategoria)="subCategoria = $event"
   ></app-categoria-especialidad>
+
+  <!-- #####  HABILIDADES  ##### -->
+  <app-habilidades
+    *ngIf="especialidad.color"
+    class="animate__animated animate__fadeIn"
+    [color]="especialidad.color"
+    (obtenerHabilidades)="habilidades = $event"
+  ></app-habilidades>
 
   <!-- Botón enviar-->
   <div class="form-group mt-5">
-    <button type="submit" class="btn btn-lg btn-rombus d-block ml-auto">
+    <button type="button" (click)="guardarWizard()" class="btn btn-lg btn-rombus d-block ml-auto">
       Continuar
     </button>
   </div>
