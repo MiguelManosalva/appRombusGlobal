@@ -26,7 +26,7 @@ export class WizardDefinicionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public guardarForm(): void{
+  public guardarForm(): void {
     const wizard: any = {
       titulo: this.formulario.get('titulo').value,
       descripcion: this.formulario.get('descripcion').value
