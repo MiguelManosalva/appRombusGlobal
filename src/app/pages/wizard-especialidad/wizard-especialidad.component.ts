@@ -12,9 +12,9 @@ export class WizardEspecialidadComponent implements OnInit {
 
   public especialidades: any[];
   public especialidad: any = { titulo: null };
-  private categoria: any;
-  private subCategoria: any;
-  private habilidades: any[];
+  public categoria: any;
+  public subCategoria: any;
+  public habilidades: any[];
 
   public wizardValido: boolean = true;
 

@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class WizardDefinicionComponent implements OnInit {
 
   public formulario: FormGroup;
-  public formValido: boolean = true;
 
   constructor(
     public fb: FormBuilder,
@@ -31,12 +30,10 @@ export class WizardDefinicionComponent implements OnInit {
       titulo: this.formulario.get('titulo').value,
       descripcion: this.formulario.get('descripcion').value
     }
-    if(this.formulario.invalid)
-      this.formValido = false;
-    else {
-      this.formValido = true;
-      this._router.navigate(['/especialidad'])
-    }
+
+    this.formulario.invalid ? 
+      this.formulario.markAllAsTouched() : 
+      this._router.navigate(['/especialidad']);
 
   }
 
