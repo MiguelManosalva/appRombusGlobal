@@ -1,1 +1,86 @@
-<p>wizard-datos-adicionales works!</p>
+<div class="container-fluid">
+  <div class="title mb-3">
+    Agrega información valiosa
+  </div>
+  <div class="sub-title mb-3">
+    Puedes adjuntar un archivo o imagen que describa tu proyecto o un ejemplo de
+    referencia.
+  </div>
+
+  <!-- #####  FORMULARIO: DEFINICIÓN ##### -->
+  <div>
+    <!-- Archivo-->
+    <div class="form-group">
+      <!-- input file -->
+      <div *ngIf="!archivo" class="form-group mb-0 animate__animated animate__fadeIn">
+        <ngx-file-drop
+          dropZoneClassName="input-file"
+          multiple="false"
+          accept=".jpg, .png, .pdf, .doc"
+          (onFileDrop)="subirArchivo($event)"
+        >
+
+          <ng-template
+            ngx-file-drop-content-tmp
+            let-openFileSelector="openFileSelector"
+          >
+            <span class="text-file" (click)="openFileSelector()">
+              Arrastra o sube un archivo o imagen (jpg, png, pdf, doc)
+            </span>
+          </ng-template>
+        </ngx-file-drop>
+      </div>
+
+      <!-- file cargado -->
+      <div *ngIf="archivo" class="input-file-view mb-0 animate__animated animate__fadeIn">
+        <div class="box-file">
+
+          <div class="row">
+            <div class="col-12">
+              <i class="fa fa-file fa-5x d-block text-center text-color-r2" aria-hidden="true"></i>
+            </div>
+            <div class="col-12">
+              <span class="text-file-view d-block text-center mt-2">
+                {{archivo.nombre}} <span class="text-color-r2 cursor" (click)="archivo = null"> (eliminar)</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <small
+        class="text-danger animate__animated animate__fadeIn"
+        *ngIf="!archivoValido"
+      >
+        Debe seleccionar archivo
+      </small>
+    </div>
+
+    <!-- Descripción-->
+    <div class="form-group">
+      <div class="sub-title mb-3">
+        Tu comentario (ideas, pedidos, ejemplos, webs, paleta de colores, marcas
+        preferidas, versiones previas, etc)
+      </div>
+      <div class="form-group form-textarea mb-0">
+        <textarea
+          class="form-control"
+          [(ngModel)]="comentario"
+          placeholder="Tu comentario ..."
+          maxlength="50"
+          rows="4"
+        >
+        </textarea>
+      </div>
+
+    </div>
+
+    <!-- Botón enviar-->
+    <div class="form-group">
+      <button type="button" (click)="guardarForm()" class="btn btn-lg btn-rombus d-block ml-auto">
+        Continuar
+      </button>
+    </div>
+  </div>
+</div>

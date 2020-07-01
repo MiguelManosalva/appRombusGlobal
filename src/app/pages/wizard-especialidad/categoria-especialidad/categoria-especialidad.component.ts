@@ -1,3 +1,4 @@
+import { StateStorage } from './../../../services/state.service';
 import { EspecialidadService } from './../../../services/especialidad.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styles: [],
 })
 export class CategoriaEspecialidadComponent implements OnInit {
-  
+
   @Input() public especialidad: any;
   @Output() private obtenerCategoria: EventEmitter<any> = new EventEmitter<any>();
   @Output() private obtenerSubCategoria: EventEmitter<any> = new EventEmitter<any>();
@@ -19,7 +20,7 @@ export class CategoriaEspecialidadComponent implements OnInit {
   public subCategoria: string = '';
   public habilidades: any[] = [];
 
-  constructor(private _especialidad: EspecialidadService) {}
+  constructor(private _especialidad: EspecialidadService) { }
 
   ngOnInit(): void {
     this.obtenerCategorias(this.especialidad.id);
@@ -46,7 +47,7 @@ export class CategoriaEspecialidadComponent implements OnInit {
   }
 
   public seleccionarSubCategoria(subCategoria: any): void{
-    this.subCategoria = subCategoria;    
+    this.subCategoria = subCategoria;
     this.obtenerSubCategoria.emit(subCategoria);
   }
 

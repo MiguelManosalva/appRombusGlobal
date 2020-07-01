@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EspecialidadService
+import {
+  EspecialidadService,
+  StateStorage
 } from './service.index';
 
 @NgModule({
@@ -9,7 +11,8 @@ import { EspecialidadService
     CommonModule
   ],
   providers:[
-    EspecialidadService
+    EspecialidadService,
+    StateStorage
   ]
 })
 export class ServiceModule { }

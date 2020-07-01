@@ -61,8 +61,30 @@ button {
 
 .sub-title {
   font-weight: 300;
-  font-size: 24px;
+  font-size: 20px;
 }
+
+.text-file {
+  color: #050505;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.text-file-view {
+  color: #050505;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+.text-color-r1{
+  color: #00a2c2;
+}
+.text-color-r2{
+  color: #24a4b4;
+}
+
+
 
 .card-esp {
   border: 0px;
@@ -105,6 +127,33 @@ button {
 .form-group > label {
   font-weight: 300;
   font-size: 20px;
+}
+
+.input-file{
+  width: 100%;
+  height: 207px;
+  /* background-color: #fff; */
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
+  border: 3px solid #24a4b4;
+  border-style: dashed;
+  overflow-y: hidden;
+}
+
+.input-file-view{
+  width: 100%;
+  height: 207px;
+}
+
+.box-file{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 207px;
+  color: #0782d0;
+}
+
+.ngx-file-drop__content {
+  height: 201px !important;
 }
 
 /* List */
@@ -203,3 +252,8 @@ footer{
    height:30px;
    width:100%;
 }
+
+
+
+
+

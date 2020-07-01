@@ -1,3 +1,4 @@
+import { StateStorage } from './../../services/state.service';
 import { EspecialidadService } from './../../services/especialidad.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -20,8 +21,12 @@ export class WizardEspecialidadComponent implements OnInit {
 
   constructor(
     private _especialidad: EspecialidadService,
-    private _router: Router
-  ) {}
+    private _router: Router,
+    private _storage: StateStorage
+    ) {
+    let step = { wizard: '2/4', titulo: 'Especialidad'};
+    this._storage.actualizarPasoActual(step);
+  }
 
   ngOnInit(): void {
     this._especialidad.obtenerEspecialidades().subscribe((res) => {
@@ -40,13 +45,14 @@ export class WizardEspecialidadComponent implements OnInit {
       subCategoria: this.subCategoria,
       habilidades: this.habilidades,
     };
-    
+
     // Validar que campos del objeto no estén vacíos
     for (let a in wizard) {
       const validacion = wizard[a] != '' && wizard[a] != null;
-      validacion ? this.wizardValido = true : this.wizardValido = false;        
+      validacion ? this.wizardValido = true : this.wizardValido = false;
     }
 
+    this._storage.state.wizard2 = wizard;
     this.wizardValido ? this._router.navigate(['/datos-adicionales']) : null;
 
   }
