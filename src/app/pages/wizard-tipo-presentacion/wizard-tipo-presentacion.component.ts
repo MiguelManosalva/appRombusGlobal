@@ -2,6 +2,7 @@ import { PresentacionService } from './../../services/rombus/presentacion.servic
 import { StateStorage } from './../../services/state.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-wizard-tipo-presentacion',
@@ -13,16 +14,22 @@ export class WizardTipoPresentacionComponent implements OnInit {
 
   public presentaciones: any[];
   public presentacion: any = { titulo: null };
+  public formularioContacto: FormGroup;
 
   public wizardValido: boolean = true;
 
   constructor(
     private _presentacion: PresentacionService,
     private _router: Router,
-    private _storage: StateStorage
+    private _storage: StateStorage,
+    public fb: FormBuilder
     ) {
+
     let step = { wizard: '4/4', titulo: 'Tipo de presentación'};
     this._storage.actualizarPasoActual(step);
+
+    this.inicializarFormulario();
+
   }
 
   ngOnInit(): void {
@@ -31,7 +38,21 @@ export class WizardTipoPresentacionComponent implements OnInit {
     });
   }
 
-  seleccionarPresentacion(presentacion: any): void {
+  private inicializarFormulario():void {
+    this.formularioContacto = this.fb.group({
+      nombre: [{ value: '', disabled: false }, [Validators.required]],
+      apellido: [{ value: '', disabled: false }, [Validators.required]],
+      correo: [
+        { value: '', disabled: false },
+        [Validators.required, Validators.email],
+      ],
+      telefono: [{ value: '', disabled: false }, [Validators.required]],
+      ciudad: [{ value: '', disabled: false }, [Validators.required]],
+      pais: [{ value: '', disabled: false }, [Validators.required]],
+    });
+  }
+
+  public seleccionarPresentacion(presentacion: any): void {
     this.presentacion = presentacion;
   }
 
@@ -49,6 +70,30 @@ export class WizardTipoPresentacionComponent implements OnInit {
     this._storage.state.wizard3 = wizard;
     this.wizardValido ? this._router.navigate(['/resumen']) : null;
 
+  }
+
+  
+  public guardarForm(): void {
+    
+    const formulario: any = {
+      nombre: this.formularioContacto.get('nombre').value,
+      apellido: this.formularioContacto.get('apellido').value,
+      correo: this.formularioContacto.get('correo').value,
+      telefono: this.formularioContacto.get('telefono').value,
+      ciudad: this.formularioContacto.get('ciudad').value,
+      pais: this.formularioContacto.get('pais').value
+    };
+
+    console.log("formularioContacto: ", formulario);
+    
+    
+    if(this.formularioContacto.invalid){
+      this.formularioContacto.markAllAsTouched();
+    } else {
+      //this._storage.state.wizard1 = wizard;
+
+    }
+      
   }
 
 }

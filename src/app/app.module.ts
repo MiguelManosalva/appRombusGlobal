@@ -22,6 +22,7 @@ import { ProfesionalComponent } from './pages/wizard-tipo-presentacion/profesion
 import { ProjectManagerComponent } from './pages/wizard-tipo-presentacion/project-manager/project-manager.component';
 import { RombusCiudadComponent } from './pages/wizard-tipo-presentacion/rombus-ciudad/rombus-ciudad.component';
 import { RombusCentralComponent } from './pages/wizard-tipo-presentacion/rombus-central/rombus-central.component';
+import { FormularioContactoComponent } from './components/formulario-contacto/formulario-contacto.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { RombusCentralComponent } from './pages/wizard-tipo-presentacion/rombus-
     ProfesionalComponent,
     ProjectManagerComponent,
     RombusCiudadComponent,
-    RombusCentralComponent
+    RombusCentralComponent,
+    FormularioContactoComponent
   ],
   imports: [
     BrowserModule,

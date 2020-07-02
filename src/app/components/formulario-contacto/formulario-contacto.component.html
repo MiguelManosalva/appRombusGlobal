@@ -1,0 +1,160 @@
+<div class="sub-title-3 mb-3">
+  Completa los datos de contacto y ubicación de tu proyecto:
+</div>
+
+<!-- #####  FORMULARIO: DEFINICIÓN ##### -->
+<form
+  class="row"
+  [formGroup]="formulario"
+  (keydown.enter)="$event.preventDefault()"
+>
+  <!-- Nombre -->
+  <div class="form-group col-md-6">
+    <div class="form-group mb-0">
+      <input
+        type="text"
+        formControlName="nombre"
+        class="form-control-contact"
+        placeholder="Ingresa tu nombre"
+        maxlength="30"
+        [ngClass]="{
+          'is-invalid':
+            formulario.get('nombre').invalid && formulario.get('nombre').touched
+        }"
+      />
+    </div>
+    <small
+      class="text-danger animate__animated animate__fadeIn"
+      *ngIf="
+        formulario.get('nombre').invalid && formulario.get('nombre').touched
+      "
+    >
+      Debe ingresar nombre
+    </small>
+  </div>
+
+  <!-- Apellido -->
+  <div class="form-group col-md-6">
+    <div class="form-group mb-0">
+      <input
+        type="text"
+        formControlName="apellido"
+        class="form-control-contact"
+        placeholder="Ingresa tus apellidos"
+        maxlength="30"
+        [ngClass]="{
+          'is-invalid':
+            formulario.get('apellido').invalid &&
+            formulario.get('apellido').touched
+        }"
+      />
+    </div>
+    <small
+      class="text-danger animate__animated animate__fadeIn"
+      *ngIf="
+        formulario.get('apellido').invalid && formulario.get('apellido').touched
+      "
+    >
+      Debe ingresar apellido
+    </small>
+  </div>
+
+  <!-- Correo -->
+  <div class="form-group col-md-6">
+    <div class="form-group mb-0">
+      <input
+        type="text"
+        formControlName="correo"
+        class="form-control-contact"
+        placeholder="Ingresa tu correo"
+        maxlength="30"
+        [ngClass]="{
+          'is-invalid':
+            formulario.get('correo').invalid && formulario.get('correo').touched
+        }"
+      />
+    </div>
+    <small
+      class="text-danger animate__animated animate__fadeIn"
+      *ngIf="
+        formulario.get('correo').invalid && formulario.get('correo').touched
+      "
+    >
+      Debe ingresar correo válido
+    </small>
+  </div>
+
+  <!-- Teléfono -->
+  <div class="form-group col-md-6">
+    <div class="form-group mb-0">
+      <input
+        type="text"
+        formControlName="telefono"
+        class="form-control-contact"
+        placeholder="Ingresa tu teléfono"
+        maxlength="30"
+        [ngClass]="{
+          'is-invalid':
+            formulario.get('telefono').invalid &&
+            formulario.get('telefono').touched
+        }"
+      />
+    </div>
+    <small
+      class="text-danger animate__animated animate__fadeIn"
+      *ngIf="
+        formulario.get('telefono').invalid && formulario.get('telefono').touched
+      "
+    >
+      Debe ingresar telefono
+    </small>
+  </div>
+
+  <!-- Ciudad -->
+  <div class="form-group col-md-6">
+    <div class="form-group mb-0">
+      <input
+        type="text"
+        formControlName="ciudad"
+        class="form-control-contact"
+        placeholder="Ingresa tu ciudad residencia"
+        maxlength="30"
+        [ngClass]="{
+          'is-invalid':
+            formulario.get('ciudad').invalid && formulario.get('ciudad').touched
+        }"
+      />
+    </div>
+    <small
+      class="text-danger animate__animated animate__fadeIn"
+      *ngIf="
+        formulario.get('ciudad').invalid && formulario.get('ciudad').touched
+      "
+    >
+      Debe ingresar ciudad
+    </small>
+  </div>
+
+  <!-- País -->
+  <div class="form-group col-md-6">
+    <div class="form-group mb-0">
+      <input
+        type="text"
+        formControlName="pais"
+        class="form-control-contact"
+        placeholder="Ingresa tu país residencia"
+        maxlength="30"
+        [ngClass]="{
+          'is-invalid':
+            formulario.get('pais').invalid && formulario.get('pais').touched
+        }"
+      />
+    </div>
+    <small
+      class="text-danger animate__animated animate__fadeIn"
+      *ngIf="formulario.get('pais').invalid && formulario.get('pais').touched"
+    >
+      Debe ingresar país
+    </small>
+  </div>
+</form>

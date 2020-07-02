@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-rombus-central',
@@ -9,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RombusCentralComponent implements OnInit {
 
   @Input() public presentacion: any;
+  @Input() public formulario: FormGroup;
 
   constructor() { }
 

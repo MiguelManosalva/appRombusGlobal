@@ -36,7 +36,7 @@ export class WizardDatosAdicionalesComponent implements OnInit {
     };
 
     if(!this.archivo){
-     this.archivo.valido = false;
+     this.archivoValido = false;
      return
     }
 
@@ -45,6 +45,7 @@ export class WizardDatosAdicionalesComponent implements OnInit {
   }
 
   public subirArchivo(archivos: NgxFileDropEntry[]) {
+    this.archivoValido = true;
     const archivo = archivos[0];
     // Valida archivo
     if (archivo.fileEntry.isFile) {

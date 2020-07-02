@@ -53,6 +53,7 @@
         *ngSwitchCase="3"
         class="animate__animated animate__fadeIn"
         [presentacion]="presentacion"
+        [formulario]="formularioContacto"
       ></app-rombus-ciudad>
 
       <!-- Rombus Central / atención corporativa  -->
@@ -60,6 +61,7 @@
         *ngSwitchCase="4"
         class="animate__animated animate__fadeIn"
         [presentacion]="presentacion"
+        [formulario]="formularioContacto"
       ></app-rombus-central>
     </div>
   </div>
@@ -68,7 +70,7 @@
   <div class="form-group mt-5">
     <button
       type="button"
-      (click)="guardarWizard()"
+      (click)="guardarForm()"
       class="btn btn-lg btn-rombus d-block ml-auto"
       style="padding: .8rem 2rem;"
     >
