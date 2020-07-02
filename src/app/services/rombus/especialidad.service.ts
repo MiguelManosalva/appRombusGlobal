@@ -2,15 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class EspecialidadService {
 
+  private api: string = environment.api;
+
   constructor(private http: HttpClient) {}
 
   obtenerEspecialidades() {
-    const url = `../../../assets/data/especialidades.json`;
+    const url = `${this.api}especialidades.json`;
     return this.http.get(url).pipe(
       map(
         (res: any) => res.especialidadades,
@@ -24,7 +28,7 @@ export class EspecialidadService {
   }
 
   obtenerCategorias(idEspecialidad) {
-    const url = `../../../assets/data/categorias.json`;
+    const url = `${this.api}categorias.json`;
     return this.http.get(url).pipe(
       map(
         (res: any) => {
@@ -59,7 +63,7 @@ export class EspecialidadService {
 
 
   obtenerSubCategorias(idCategoria) {
-    const url = `../../../assets/data/subCategorias.json`;
+    const url = `${this.api}subCategorias.json`;
     return this.http.get(url).pipe(
       map(
         (res: any) => {
