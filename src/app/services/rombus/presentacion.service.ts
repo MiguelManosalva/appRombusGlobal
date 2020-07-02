@@ -10,7 +10,7 @@ export class PresentacionService {
   constructor(private http: HttpClient) {}
 
   obtenerPresentaciones() {
-    const url = `../../assets/data/presentaciones.json`;
+    const url = `../../../assets/data/presentaciones.json`;
     return this.http.get(url).pipe(
       map(
         (res: any) => res.presentaciones,

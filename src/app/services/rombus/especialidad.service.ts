@@ -10,7 +10,7 @@ export class EspecialidadService {
   constructor(private http: HttpClient) {}
 
   obtenerEspecialidades() {
-    const url = `../../assets/data/especialidades.json`;
+    const url = `../../../assets/data/especialidades.json`;
     return this.http.get(url).pipe(
       map(
         (res: any) => res.especialidadades,
@@ -24,7 +24,7 @@ export class EspecialidadService {
   }
 
   obtenerCategorias(idEspecialidad) {
-    const url = `../../assets/data/categorias.json`;
+    const url = `../../../assets/data/categorias.json`;
     return this.http.get(url).pipe(
       map(
         (res: any) => {
@@ -59,7 +59,7 @@ export class EspecialidadService {
 
 
   obtenerSubCategorias(idCategoria) {
-    const url = `../../assets/data/subCategorias.json`;
+    const url = `../../../assets/data/subCategorias.json`;
     return this.http.get(url).pipe(
       map(
         (res: any) => {
