@@ -211,6 +211,7 @@ button {
 
 .btn-rombus {
   padding: .8rem 5rem;
+  font-size: 18px;
   color: #fff;
   text-transform: capitalize;
   border-radius: 0px;

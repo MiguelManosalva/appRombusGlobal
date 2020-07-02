@@ -45,18 +45,21 @@
       <app-project-manager
         *ngSwitchCase="2"
         class="animate__animated animate__fadeIn"
+        [presentacion]="presentacion"
       ></app-project-manager>
 
       <!-- Rombus Ciudad / cercana a mi ubicación  -->
       <app-rombus-ciudad
         *ngSwitchCase="3"
         class="animate__animated animate__fadeIn"
+        [presentacion]="presentacion"
       ></app-rombus-ciudad>
 
       <!-- Rombus Central / atención corporativa  -->
       <app-rombus-central
         *ngSwitchCase="4"
         class="animate__animated animate__fadeIn"
+        [presentacion]="presentacion"
       ></app-rombus-central>
     </div>
   </div>
@@ -67,8 +70,9 @@
       type="button"
       (click)="guardarWizard()"
       class="btn btn-lg btn-rombus d-block ml-auto"
+      style="padding: .8rem 2rem;"
     >
-      Continuar
+      ¡Terminado! ir a Resúmen
     </button>
   </div>
 </div>

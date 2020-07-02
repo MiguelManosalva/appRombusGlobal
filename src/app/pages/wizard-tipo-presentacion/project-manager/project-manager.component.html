@@ -1,1 +1,74 @@
-<p>project-manager works!</p>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-4">
+    <div class="sub-title">
+      Designaremos un Project Manager
+    </div>
+
+    <div class="sub-title-2 mb-2">
+      Quien se encargará de atender el caso,
+      Coordinar el proceso y dirigir el trabajo del equipo profesional.
+    </div>
+  </div>
+</div>
+
+
+<!-- #####  TIPO PROYECTO  ##### -->
+<div class="sub-title">
+  Tipo de proyecto
+</div>
+<div class="row mb-3">
+  <div *ngFor="let e of presentacion.tiposProyectos" class="col-md-4">
+    <div class="card card-rom-3 shadow mb-4 mt-3">
+      <div
+        class="card-body cursor text-center"
+        (click)="seleccionarTipoProyecto(e)"
+        [ngClass]="{
+          'card-active text-white': tipoProyecto.titulo == e.titulo,
+          'text-color-r3': tipoProyecto.titulo != e.titulo
+        }"
+        [ngStyle]="{
+          'background-color':
+            tipoProyecto.titulo == e.titulo ? presentacion.color : ''
+        }"
+      >
+        <div class="content-center">
+          <i [class]="'fa ' + e.icon + ' fa-2x'" aria-hidden="true"></i>
+          <span class="d-block">{{ e.titulo }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- #####  PLAZOS  ##### -->
+<div *ngIf="tipoProyecto.titulo" class="animate__animated animate__fadeIn">
+  <div class="sub-title">
+    Plazo estimado:
+  </div>
+  <div class="sub-title-2 mb-2">
+    Indica el tiempo aproximado en el que necesitarás que se repita tu proyecto. Luego podrás precisarlo o revisarlo con mayor exactitud.
+  </div>
+  <div class="row mb-3">
+    <div *ngFor="let e of presentacion.plazos" class="col-md-4">
+      <div class="card card-rom-2 shadow mb-4 mt-3">
+        <div
+          class="card-body cursor text-center"
+          (click)="seleccionarPlazo(e)"
+          [ngClass]="{
+            'card-active text-white': plazo.titulo == e.titulo,
+            'text-color-r3': plazo.titulo != e.titulo
+          }"
+          [ngStyle]="{
+            'background-color':
+              plazo.titulo == e.titulo ? presentacion.color : ''
+          }"
+        >
+          <div class="content-center">
+            <span class="d-block">{{ e.titulo }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

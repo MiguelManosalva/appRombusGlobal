@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-rombus-central',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class RombusCentralComponent implements OnInit {
+
+  @Input() public presentacion: any;
 
   constructor() { }
 
