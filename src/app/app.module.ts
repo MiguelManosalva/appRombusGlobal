@@ -18,6 +18,10 @@ import { StepComponent } from './components/step/step.component';
 import { CategoriaEspecialidadComponent } from './pages/wizard-especialidad/categoria-especialidad/categoria-especialidad.component';
 import { HabilidadesComponent } from './pages/wizard-especialidad/habilidades/habilidades.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProfesionalComponent } from './pages/wizard-tipo-presentacion/profesional/profesional.component';
+import { ProjectManagerComponent } from './pages/wizard-tipo-presentacion/project-manager/project-manager.component';
+import { RombusCiudadComponent } from './pages/wizard-tipo-presentacion/rombus-ciudad/rombus-ciudad.component';
+import { RombusCentralComponent } from './pages/wizard-tipo-presentacion/rombus-central/rombus-central.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { FooterComponent } from './components/footer/footer.component';
     StepComponent,
     CategoriaEspecialidadComponent,
     HabilidadesComponent,
-    FooterComponent
+    FooterComponent,
+    ProfesionalComponent,
+    ProjectManagerComponent,
+    RombusCiudadComponent,
+    RombusCentralComponent
   ],
   imports: [
     BrowserModule,

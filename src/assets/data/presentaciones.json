@@ -1,0 +1,81 @@
+{
+  "presentaciones": [
+    {
+      "titulo": "Un profesional individual",
+      "icon": "fa-user",
+      "color": "#24a4b4",
+      "id": 1,
+      "niveles": [
+        {
+          "titulo": "Inicial",
+          "icon": "$"
+        },
+        {
+          "titulo": "Medio",
+          "icon": "$$"
+        },
+        {
+          "titulo": "Experto",
+          "icon": "$$$"
+        }
+      ],
+      "tiposProyectos": [
+        {
+          "titulo": "Proyecto único, empieza y termina solo una vez",
+          "icon": "fa-file-text"
+        },
+        {
+          "titulo": "Proyecto recurrente, se repite según plazo estimado",
+          "icon": "fa-calendar-check-o"
+        },
+        {
+          "titulo": "No lo sé aún, lo definiré luego",
+          "icon": "fa-question-circle"
+        }
+      ]
+    },
+    {
+      "titulo": "Project manager y equipo",
+      "icon": "fa-users",
+      "color": "#24a4b4",
+      "id": 2,
+      "plazos": [
+        {
+          "titulo": "1 a 7 días"
+        },
+        {
+          "titulo": "8 a 30 días"
+        },
+        {
+          "titulo": "Más de 30 días"
+        }
+      ],
+      "tiposProyectos": [
+        {
+          "titulo": "Proyecto único, empieza y termina solo una vez",
+          "icon": "fa-file-text"
+        },
+        {
+          "titulo": "Proyecto recurrente, se repite según plazo estimado",
+          "icon": "fa-calendar-check-o"
+        },
+        {
+          "titulo": "No lo sé aún, lo definiré luego",
+          "icon": "fa-question-circle"
+        }
+      ]
+    },
+    {
+      "titulo": "Rombus Ciudad / cercana a mi ubicación",
+      "icon": "fa-map-marker",
+      "color": "#24a4b4",
+      "id": 3
+    },
+    {
+      "titulo": "Rombus Central / atención corporativa",
+      "icon": "fa-building",
+      "color": "#24a4b4",
+      "id": 4
+    }
+  ]
+}

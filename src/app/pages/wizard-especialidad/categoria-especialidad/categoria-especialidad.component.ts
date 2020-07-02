@@ -1,5 +1,4 @@
-import { StateStorage } from './../../../services/state.service';
-import { EspecialidadService } from './../../../services/especialidad.service';
+import { EspecialidadService } from '../../../services/rombus/especialidad.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({

@@ -1,0 +1,64 @@
+<div class="sub-title">
+  Selecciona el nivel de experiencia
+</div>
+
+<div class="sub-title-2 mb-2">
+  Inicial » talentos que transitan sus primero años.
+  <br />
+  Medio » ya cuentan con experiencia comprobable.
+  <br />
+  Experto » poseen total dominio en la materia.
+</div>
+
+<!-- #####  NIVEL  ##### -->
+<div class="row mb-3">
+  <div *ngFor="let e of presentacion.niveles" class="col-md-4">
+    <div class="card card-rom-2 shadow mb-4 mt-3">
+      <div
+        class="card-body cursor text-center"
+        (click)="seleccionarNivel(e)"
+        [ngClass]="{
+          'card-active text-white': nivel.titulo == e.titulo,
+          'text-color-r3': nivel.titulo != e.titulo
+        }"
+        [ngStyle]="{
+          'background-color': nivel.titulo == e.titulo ? presentacion.color : ''
+        }"
+      >
+        <div class="content-center">
+          <span class="d-block">{{ e.titulo }} </span>
+          <span class="d-block">{{ e.icon }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- #####  TIPO PROYECTO  ##### -->
+<div *ngIf="nivel.titulo" class="div">
+  <div class="sub-title">
+    Tipo de proyecto
+  </div>
+  <div class="row mb-3">
+    <div *ngFor="let e of presentacion.tiposProyectos" class="col-md-4">
+      <div class="card card-rom-3 shadow mb-4 mt-3">
+        <div
+          class="card-body cursor text-center"
+          (click)="seleccionarTipoProyecto(e)"
+          [ngClass]="{
+            'card-active text-white': tipoProyecto.titulo == e.titulo,
+            'text-color-r3': tipoProyecto.titulo != e.titulo
+          }"
+          [ngStyle]="{
+            'background-color': tipoProyecto.titulo == e.titulo ? presentacion.color : ''
+          }"
+        >
+          <div class="content-center">
+            <i [class]="'fa ' + e.icon + ' fa-2x'" aria-hidden="true"></i>
+            <span class="d-block">{{ e.titulo }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

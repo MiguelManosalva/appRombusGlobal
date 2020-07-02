@@ -1,5 +1,5 @@
 import { StateStorage } from './../../services/state.service';
-import { EspecialidadService } from './../../services/especialidad.service';
+import { EspecialidadService } from '../../services/rombus/especialidad.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // import { faCode, faEye, faThumbsUp, faBinoculars } from '@fortawesome/free-solid-svg-icons';

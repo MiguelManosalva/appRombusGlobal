@@ -1,1 +1,74 @@
-<p>wizard-tipo-presentacion works!</p>
+<div class="container-fluid" *ngIf="presentaciones">
+  <div class="title mb-3">
+    Define la modalidad de atención profesional
+  </div>
+  <div class="sub-title mb-3">
+    Elige con quién quieres resolver el trabajo
+  </div>
+
+  <!-- #####  SERVICIOS  ##### -->
+  <div class="row mb-3">
+    <div *ngFor="let e of presentaciones" class="col-md-3">
+      <div class="card card-esp shadow mb-4 mt-3">
+        <div
+          class="card-body cursor text-center"
+          (click)="seleccionarPresentacion(e)"
+          [ngClass]="{
+            'card-active text-white': presentacion.titulo == e.titulo,
+            'text-color-r3': presentacion.titulo != e.titulo
+          }"
+          [ngStyle]="{
+            'background-color': presentacion.titulo == e.titulo ? e.color : ''
+          }"
+        >
+          <div class="content-center">
+            <i [class]="'fa ' + e.icon + ' fa-2x'" aria-hidden="true"></i>
+            <span class="d-block">{{ e.titulo }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tipo Presentacion -->
+  <div *ngIf="presentacion">
+    <div [ngSwitch]="presentacion.id">
+      <!-- Un profesional individual  -->
+      <app-profesional
+        *ngSwitchCase="1"
+        class="_animate__animated animate__fadeIn"
+        [presentacion]="presentacion"
+      >
+      </app-profesional>
+
+      <!-- Project manager y equipo  -->
+      <app-project-manager
+        *ngSwitchCase="2"
+        class="animate__animated animate__fadeIn"
+      ></app-project-manager>
+
+      <!-- Rombus Ciudad / cercana a mi ubicación  -->
+      <app-rombus-ciudad
+        *ngSwitchCase="3"
+        class="animate__animated animate__fadeIn"
+      ></app-rombus-ciudad>
+
+      <!-- Rombus Central / atención corporativa  -->
+      <app-rombus-central
+        *ngSwitchCase="4"
+        class="animate__animated animate__fadeIn"
+      ></app-rombus-central>
+    </div>
+  </div>
+
+  <!-- Botón enviar-->
+  <div class="form-group mt-5">
+    <button
+      type="button"
+      (click)="guardarWizard()"
+      class="btn btn-lg btn-rombus d-block ml-auto"
+    >
+      Continuar
+    </button>
+  </div>
+</div>

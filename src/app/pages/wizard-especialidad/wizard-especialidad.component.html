@@ -15,7 +15,7 @@
           (click)="seleccionarEspecialidad(e)"
           [ngClass]="{
             'card-active text-white': especialidad.titulo == e.titulo,
-            'text-muted': especialidad.titulo != e.titulo
+            'text-color-r3': especialidad.titulo != e.titulo
           }"
           [ngStyle]="{
             'background-color': especialidad.titulo == e.titulo ? e.color : ''
