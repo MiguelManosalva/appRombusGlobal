@@ -12,9 +12,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class WizardTipoPresentacionComponent implements OnInit {
 
+  private wizard4: any;
   public presentaciones: any[];
   public presentacion: any = { titulo: null };
   public formularioContacto: FormGroup;
+  private datosContacto: any;
+  public presupuesto: any = 0;
 
   public wizardValido: boolean = true;
 
@@ -24,11 +27,15 @@ export class WizardTipoPresentacionComponent implements OnInit {
     private _storage: StateStorage,
     public fb: FormBuilder
     ) {
-
+    this.wizard4 = this._storage.state.wizard4;
+    this._storage.state.resumen = false;
     let step = { wizard: '4/4', titulo: 'Tipo de presentación'};
     this._storage.actualizarPasoActual(step);
 
-    this.inicializarFormulario();
+    this.presentacion = this.wizard4.presentacion;
+    this.presupuesto = this.wizard4.presupuesto;
+    this.datosContacto = this.wizard4.datosContacto;
+    this.inicializarFormulario(this.datosContacto); 
 
   }
 
@@ -38,36 +45,46 @@ export class WizardTipoPresentacionComponent implements OnInit {
     });
   }
 
-  private inicializarFormulario():void {
+  private inicializarFormulario(data):void {
     this.formularioContacto = this.fb.group({
-      nombre: [{ value: '', disabled: false }, [Validators.required]],
-      apellido: [{ value: '', disabled: false }, [Validators.required]],
+      nombre: [{ value: data.nombre, disabled: false }, [Validators.required]],
+      apellido: [{ value: data.apellido, disabled: false }, [Validators.required]],
       correo: [
-        { value: '', disabled: false },
+        { value: data.correo, disabled: false },
         [Validators.required, Validators.email],
       ],
-      telefono: [{ value: '', disabled: false }, [Validators.required]],
-      ciudad: [{ value: '', disabled: false }, [Validators.required]],
-      pais: [{ value: '', disabled: false }, [Validators.required]],
+      telefono: [{ value: data.telefono, disabled: false }, [Validators.required]],
+      ciudad: [{ value: data.ciudad, disabled: false }, [Validators.required]],
+      pais: [{ value: '', pais: false }, [Validators.required]],
     });
   }
 
   public seleccionarPresentacion(presentacion: any): void {
     this.presentacion = presentacion;
+    console.log("presentacion:", presentacion);
+    
   }
 
   public guardarWizard(): void {
     const wizard: any = {
-      presentacion: this.presentacion
+      presentacion: this.presentacion,
+      presupuesto: this.presupuesto,
+      datosContacto: this.datosContacto
     };
 
-    // Validar que campos del objeto no estén vacíos
-    for (let a in wizard) {
-      const validacion = wizard[a] != '' && wizard[a] != null;
-      validacion ? this.wizardValido = true : this.wizardValido = false;
-    }
+    if(this.presentacion.id > 2) this.guardarForm();
 
-    this._storage.state.wizard3 = wizard;
+    console.log("wizard: ", wizard);
+    
+
+    // Validar que campos del objeto no estén vacíos
+    // for (let a in wizard) {
+    //   const validacion = wizard[a] != '' && wizard[a] != null;
+    //   validacion ? this.wizardValido = true : this.wizardValido = false;
+    // }
+
+    this._storage.state.wizard4 = wizard;
+    localStorage.setItem('appRombus', JSON.stringify(this._storage.state));
     this.wizardValido ? this._router.navigate(['/resumen']) : null;
 
   }
@@ -75,7 +92,7 @@ export class WizardTipoPresentacionComponent implements OnInit {
   
   public guardarForm(): void {
     
-    const formulario: any = {
+    this.dataContacto = {
       nombre: this.formularioContacto.get('nombre').value,
       apellido: this.formularioContacto.get('apellido').value,
       correo: this.formularioContacto.get('correo').value,
@@ -84,7 +101,7 @@ export class WizardTipoPresentacionComponent implements OnInit {
       pais: this.formularioContacto.get('pais').value
     };
 
-    console.log("formularioContacto: ", formulario);
+    console.log("formularioContacto: ", this.dataContacto);
     
     
     if(this.formularioContacto.invalid){

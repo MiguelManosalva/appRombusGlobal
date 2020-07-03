@@ -12,7 +12,7 @@
     <!-- Archivo-->
     <div class="form-group">
       <!-- input file -->
-      <div *ngIf="!archivo" class="form-group mb-0 animate__animated animate__fadeIn">
+      <div *ngIf="archivo.nombre == ''" class="form-group mb-0 animate__animated animate__fadeIn">
         <ngx-file-drop
           dropZoneClassName="input-file"
           multiple="false"
@@ -32,7 +32,7 @@
       </div>
 
       <!-- file cargado -->
-      <div *ngIf="archivo" class="input-file-view mb-0 animate__animated animate__fadeIn">
+      <div *ngIf="archivo.nombre != ''" class="input-file-view mb-0 animate__animated animate__fadeIn">
         <div class="box-file">
 
           <div class="row">

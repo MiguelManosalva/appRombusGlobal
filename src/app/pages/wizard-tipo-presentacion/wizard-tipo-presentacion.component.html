@@ -64,15 +64,22 @@
         [formulario]="formularioContacto"
       ></app-rombus-central>
     </div>
+
+    <!-- Rango precio presupuesto -->
+    <app-rango-precio
+      *ngIf="presentacion.titulo"
+      [presupuesto]="presupuesto"
+      class="animate__animated animate__fadeIn"
+    ></app-rango-precio>
   </div>
 
   <!-- Botón enviar-->
   <div class="form-group mt-5">
     <button
       type="button"
-      (click)="guardarForm()"
+      (click)="guardarWizard()"
       class="btn btn-lg btn-rombus d-block ml-auto"
-      style="padding: .8rem 2rem;"
+      style="padding: 0.8rem 2rem;"
     >
       ¡Terminado! ir a Resúmen
     </button>

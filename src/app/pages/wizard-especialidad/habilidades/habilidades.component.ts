@@ -11,7 +11,7 @@ export class HabilidadesComponent implements OnInit {
   @Input() public color: string = '';
   @Output() private obtenerHabilidades: EventEmitter<any> = new EventEmitter<any>();
 
-  public habilidades: any[] = ['Diseño de Interfaz de Usuario'];
+  @Input() public habilidades: any[] = ['Diseño de Interfaz de Usuario'];
   public habilidad: string = '';
 
   constructor() { }

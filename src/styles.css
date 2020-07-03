@@ -158,12 +158,17 @@ button {
   padding: .375rem .5rem;
   font-size: 14px;
   width: 100%;
-  /* font-weight: 500; */
 }
 
 .form-group > label {
   font-weight: 300;
   font-size: 20px;
+}
+
+.form-control[readonly] {
+  background-color: #eeedec;
+  border-color:  #d2d2d1;
+  opacity: 1;
 }
 
 .input-file{

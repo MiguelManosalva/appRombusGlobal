@@ -1,5 +1,5 @@
 import { StateStorage } from './../../services/state.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-step',
@@ -9,11 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StepComponent implements OnInit {
 
-  public step: any;
+  @Input() public step: any;
 
   constructor(public _storage: StateStorage) {
-    this.step = this._storage.obtener().step;
-   }
+  }
 
   ngOnInit(): void {
   }

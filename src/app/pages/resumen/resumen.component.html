@@ -1,1 +1,51 @@
-<p>resumen works!</p>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-9 d-flex">
+    <div class="title mb-3">
+      Resumen del Proyecto
+    </div>
+    <button
+      type="button"
+      class="btn btn-lg btn-rombus d-block ml-auto"
+      style="padding: 0.8rem 2rem; background-color: #f39a18;"
+    >
+      ¡ENVIAR AHORA!
+    </button>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="col-md-3">
+    <app-step [step]="{ wizard: '1', titulo: 'Definición' }"></app-step>
+  </div>
+  <div class="col-md-9">
+    <div class="card">
+      <div class="card-body">
+        <div class="title-card">
+          {{_storage.state.wizard1.titulo}}
+        </div>
+        <hr>
+        <div class="desc-card">
+            {{_storage.state.wizard1.descripcion}}
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESPECIALIDAD -->
+  <div class="col-md-3">
+    <app-step [step]="{ wizard: '2', titulo: 'Especialidad' }"></app-step>
+  </div>
+  <div class="col-md-9"></div>
+
+  <!-- ADICIONALES -->
+  <div class="col-md-3">
+    <app-step [step]="{ wizard: '3', titulo: 'Adicionales' }"></app-step>
+  </div>
+  <div class="col-md-9"></div>
+
+  <!-- CONDICIONES -->
+  <div class="col-md-3">
+    <app-step [step]="{ wizard: '4', titulo: 'Condiciones' }"></app-step>
+  </div>
+  <div class="col-md-9"></div>
+</div>

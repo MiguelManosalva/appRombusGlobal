@@ -4,21 +4,40 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const initialState = {
   step: { wizard: '1/1', titulo: "Definición" },
+  resumen: false,
   wizard1: {
     titulo: '',
-    descripcion: ''
+    descripcion: '',
+    estado: false,
   },
   wizard2: {
     especialidad: '',
     categoria: '',
     subCategoria: '',
-    habilidades: []
+    habilidades: [],
+    estado: false,
   },
   wizard3: {
-
+    archivo: {
+      info: '', 
+      nombre: '',
+      base64: '',
+    },
+    comentario: '',
+    estado: false,
   },
   wizard4: {
-
+    presentacion: { titulo: null },
+    presupuesto: 0,
+    dataContacto: {
+      nombre: '',
+      apellido: '',
+      telefono: '',
+      correo: '',
+      ciudad: '',
+      pais: ''
+    },
+    estado: false,
   }
 }
 
@@ -31,6 +50,8 @@ export class StateStorage {
 
   constructor() {
       const dataStorage = JSON.parse(localStorage.getItem('appRombus'));
+      console.log("dataStorage: ", dataStorage);
+      
       if(dataStorage){
         this.state = dataStorage
       }

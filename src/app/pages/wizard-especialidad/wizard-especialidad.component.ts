@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class WizardEspecialidadComponent implements OnInit {
 
+  private wizard2: any;
   public especialidades: any[];
   public especialidad: any = { titulo: null };
   public categoria: any;
@@ -24,8 +25,15 @@ export class WizardEspecialidadComponent implements OnInit {
     private _router: Router,
     private _storage: StateStorage
     ) {
+      this.wizard2 = this._storage.state.wizard2;
+    this._storage.state.resumen = false;
     let step = { wizard: '2/4', titulo: 'Especialidad'};
     this._storage.actualizarPasoActual(step);
+      
+    this.especialidad = this.wizard2.especialidad;
+    this.categoria = this.wizard2.categoria;
+    this.subCategoria = this.wizard2.subCategoria;
+    this.habilidades = this.wizard2.habilidades;
   }
 
   ngOnInit(): void {
@@ -53,6 +61,7 @@ export class WizardEspecialidadComponent implements OnInit {
     }
 
     this._storage.state.wizard2 = wizard;
+    localStorage.setItem('appRombus', JSON.stringify(this._storage.state));
     this.wizardValido ? this._router.navigate(['/datos-adicionales']) : null;
 
   }

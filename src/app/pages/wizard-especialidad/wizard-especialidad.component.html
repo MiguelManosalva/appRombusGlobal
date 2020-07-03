@@ -36,6 +36,8 @@
     *ngIf="especialidad.titulo"
     class="animate__animated animate__fadeIn"
     [especialidad]="especialidad"
+    [categoria]="categoria"
+    [subCategoria]="subCategoria"
     (obtenerCategoria)="categoria = $event"
     (obtenerSubCategoria)="subCategoria = $event"
   ></app-categoria-especialidad>
@@ -44,6 +46,7 @@
   <app-habilidades
     *ngIf="especialidad.color"
     class="animate__animated animate__fadeIn"
+    [habilidades]="habilidades"
     [color]="especialidad.color"
     (obtenerHabilidades)="habilidades = $event"
   ></app-habilidades>

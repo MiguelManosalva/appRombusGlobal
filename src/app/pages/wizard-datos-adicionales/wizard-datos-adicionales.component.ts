@@ -11,6 +11,7 @@ import { NgxFileDropEntry, FileSystemFileEntry } from 'ngx-file-drop';
 })
 export class WizardDatosAdicionalesComponent implements OnInit {
 
+  private wizard3: any;
   public archivo: any;
   public comentario: string = '';
   public archivoValido: boolean = true;
@@ -19,8 +20,13 @@ export class WizardDatosAdicionalesComponent implements OnInit {
     private _router: Router,
     private _storage: StateStorage
   ) {
+    this.wizard3 = this._storage.state.wizard3;
+    this._storage.state.resumen = false;
     let step = { wizard: '3/4', titulo: 'Datos Adicionales' };
     this._storage.actualizarPasoActual(step);
+
+    this.archivo = this.wizard3.archivo;
+    this.comentario = this.wizard3.comentario;
 
   }
 
@@ -41,6 +47,7 @@ export class WizardDatosAdicionalesComponent implements OnInit {
     }
 
     this._storage.state.wizard3 = wizard;
+    localStorage.setItem('appRombus', JSON.stringify(this._storage.state));
     this._router.navigate(['/tipo-presentacion']);
   }
 

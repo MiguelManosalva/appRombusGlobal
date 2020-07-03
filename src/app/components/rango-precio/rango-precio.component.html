@@ -1,0 +1,52 @@
+<div class="row mb-3">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <!-- Rango de precios sugeridos -->
+    <div class="form-group">
+      <div class="sub-title mb-3">
+        Rango de precios sugeridos
+      </div>
+      <div class="form-group mb-0 d-flex">
+        <!-- <i
+          class="fa fa-question-circle-o text-muted my-auto pr-2 d-block py-auto"
+          aria-hidden="true"
+        ></i> -->
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            maxlength="50"
+            [(ngModel)]="rangoPrecioSugerido"
+            readonly
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Tu presupuesto -->
+    <div class="form-group">
+      <div class="sub-title mb-3">
+        Tu presupuesto
+      </div>
+      <div class="form-group mb-0">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ingresa monto"
+          maxlength="50"
+          [(ngModel)]="presupuesto"
+          [ngClass]="{
+            'is-invalid': !presupuestoValido
+          }"
+        />
+      </div>
+      <small
+        class="text-danger animate__animated animate__fadeIn"
+        *ngIf="!presupuestoValido"
+      >
+        Debe ingresar un monto
+      </small>
+    </div>
+  </div>
+</div>

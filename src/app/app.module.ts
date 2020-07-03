@@ -23,6 +23,7 @@ import { ProjectManagerComponent } from './pages/wizard-tipo-presentacion/projec
 import { RombusCiudadComponent } from './pages/wizard-tipo-presentacion/rombus-ciudad/rombus-ciudad.component';
 import { RombusCentralComponent } from './pages/wizard-tipo-presentacion/rombus-central/rombus-central.component';
 import { FormularioContactoComponent } from './components/formulario-contacto/formulario-contacto.component';
+import { RangoPrecioComponent } from './components/rango-precio/rango-precio.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FormularioContactoComponent } from './components/formulario-contacto/fo
     ProjectManagerComponent,
     RombusCiudadComponent,
     RombusCentralComponent,
-    FormularioContactoComponent
+    FormularioContactoComponent,
+    RangoPrecioComponent
   ],
   imports: [
     BrowserModule,

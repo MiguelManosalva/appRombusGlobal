@@ -10,20 +10,22 @@ import { Router } from '@angular/router';
 })
 export class WizardDefinicionComponent implements OnInit {
   public formulario: FormGroup;
+  private wizard1: any;
 
   constructor(
     public fb: FormBuilder,
     private _router: Router,
     private _storage: StateStorage
   ) {
-
+    this.wizard1 = this._storage.state.wizard1;
+    this._storage.state.resumen = false;
     let step = { wizard: '1/1', titulo: 'Definición' };
     this._storage.actualizarPasoActual(step);
 
     // Iniciar formulario
     this.formulario = this.fb.group({
-      titulo: [{ value: '', disabled: false }, [Validators.required]],
-      descripcion: [{ value: '', disabled: false }, [Validators.required]],
+      titulo: [{ value: this.wizard1.titulo, disabled: false }, [Validators.required]],
+      descripcion: [{ value: this.wizard1.descripcion, disabled: false }, [Validators.required]],
     });
   }
 
@@ -36,6 +38,7 @@ export class WizardDefinicionComponent implements OnInit {
     };
 
     this._storage.state.wizard1 = wizard;
+    localStorage.setItem('appRombus', JSON.stringify(this._storage.state));
 
     this.formulario.invalid
       ? this.formulario.markAllAsTouched()

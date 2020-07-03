@@ -9,27 +9,23 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class CategoriaEspecialidadComponent implements OnInit {
 
   @Input() public especialidad: any;
+  @Input() public categoria: string = '';
+  @Input() public subCategoria: string = '';
   @Output() private obtenerCategoria: EventEmitter<any> = new EventEmitter<any>();
   @Output() private obtenerSubCategoria: EventEmitter<any> = new EventEmitter<any>();
 
   public cargando: boolean = true;
   public categorias: any[];
   public subCategorias: any[];
-  public categoria: string = '';
-  public subCategoria: string = '';
-  public habilidades: any[] = [];
 
   constructor(private _especialidad: EspecialidadService) { }
 
   ngOnInit(): void {
     this.obtenerCategorias(this.especialidad.id);
+    if(this.categoria != '') this.obtenerSubCategorias(this.especialidad.id);
+
   }
 
-  ngOnChanges(): void {
-    if (this.especialidad.id) {
-      this.obtenerCategorias(this.especialidad.id);
-    }
-  }
 
   private obtenerCategorias(idEspecialidad: any): void {
     this.cargando = true;

@@ -1,9 +1,12 @@
 <div class="d-flex">
     <div class="step">
-        <div class="step-center">
+        <div *ngIf="!_storage.state.resumen" class="step-center">
             {{_storage.state.step.wizard}}
         </div>
+        <div *ngIf="_storage.state.resumen" class="step-center">
+            {{step.wizard}}
+        </div>
     </div>
-
-    <span class="my-auto ml-2 title-step"> {{_storage.state.step.titulo}} </span>
+    <span class="my-auto ml-2 title-step" *ngIf="!_storage.state.resumen"> {{_storage.state.step.titulo}} </span>
+    <span class="my-auto ml-2 title-step" *ngIf="_storage.state.resumen"> {{step.titulo}} </span>
 </div>
