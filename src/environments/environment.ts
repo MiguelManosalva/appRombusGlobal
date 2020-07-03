@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: "http://miguel-manosalva.hware.cl/appRombusGlobal/assets/data/"
+  api: "../assets/data/"
 };
 
 /*
