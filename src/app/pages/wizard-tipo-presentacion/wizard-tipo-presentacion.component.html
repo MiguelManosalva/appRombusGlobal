@@ -83,7 +83,9 @@
   </div>
 
   <!-- Botón enviar-->
-  <div class="form-group mt-5">
+  <div class="form-group mt-5 d-flex">
+    <a [routerLink]="['/datos-adicionales']" style="color: #00a2c2"> < Volver </a>
+
     <button
       type="button"
       (click)="guardarWizard()"

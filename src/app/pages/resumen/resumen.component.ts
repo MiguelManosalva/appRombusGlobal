@@ -25,4 +25,10 @@ export class ResumenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public terminar(): void {
+    this._storage.borrar();
+    localStorage.removeItem('appRombus');
+    this._router.navigate(['/definicion'])
+  }
+
 }

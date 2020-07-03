@@ -70,6 +70,7 @@ export class StateStorage {
 
   public borrar(): void{
     this.state = initialState;
+    localStorage.setItem('appRombus', JSON.stringify(initialState));
   }
 
   public actualizarPasoActual(paso){

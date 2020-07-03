@@ -52,7 +52,8 @@
   ></app-habilidades>
 
   <!-- Botón enviar-->
-  <div class="form-group mt-5">
+  <div class="form-group d-flex mt-5">
+    <a [routerLink]="['/definicion']" style="color: #00a2c2"> < Volver </a>
     <button type="button" (click)="guardarWizard()" class="btn btn-lg btn-rombus d-block ml-auto">
       Continuar
     </button>
