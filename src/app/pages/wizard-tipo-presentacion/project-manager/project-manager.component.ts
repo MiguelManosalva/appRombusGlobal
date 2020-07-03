@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-project-manager',
@@ -7,8 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProjectManagerComponent implements OnInit {
   @Input() public presentacion: any;
-  public tipoProyecto: any = { titulo: null };
-  public plazo: any = { titulo: null };
+  @Input() public tipoProyecto: any = { titulo: null };
+  @Input() public plazo: any = { titulo: null };
+  @Output() private obtenerTipoProyecto: EventEmitter<any> = new EventEmitter<any>();
+  @Output() private obtenerPlazo: EventEmitter<any> = new EventEmitter<any>();
+
 
   constructor() {}
 
@@ -16,10 +19,12 @@ export class ProjectManagerComponent implements OnInit {
 
   public seleccionarTipoProyecto(tipoProyecto): void {
     this.tipoProyecto = tipoProyecto;
+    this.obtenerTipoProyecto.emit(tipoProyecto)
   }
 
   public seleccionarPlazo(plazo): void {
     this.plazo = plazo;
+    this.obtenerPlazo.emit(plazo);
   }
 
 }

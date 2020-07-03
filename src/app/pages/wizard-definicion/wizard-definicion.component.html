@@ -22,7 +22,7 @@
           formControlName="titulo"
           class="form-control"
           placeholder="Título del proyecto (Ej: ...)"
-          maxlength="50"
+          maxlength="150"
           [ngClass]="{
             'is-invalid':
               formulario.get('titulo').invalid &&
@@ -48,7 +48,7 @@
           class="form-control"
           formControlName="descripcion"
           placeholder="Descripción del proyecto"
-          maxlength="50"
+          maxlength="2000"
           rows="6"
           [ngClass]="{
             'is-invalid':

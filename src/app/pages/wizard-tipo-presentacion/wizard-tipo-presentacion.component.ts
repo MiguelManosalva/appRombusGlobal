@@ -13,10 +13,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class WizardTipoPresentacionComponent implements OnInit {
 
   private wizard4: any;
+  private datosContacto: any;
   public presentaciones: any[];
   public presentacion: any = { titulo: null };
+  public nivel: any = { titulo: null };
+  public tipoProyecto: any = { titulo: null };
+  public plazo: any = { titulo: null };
   public formularioContacto: FormGroup;
-  private datosContacto: any;
   public presupuesto: any = 0;
 
   public wizardValido: boolean = true;
@@ -32,9 +35,14 @@ export class WizardTipoPresentacionComponent implements OnInit {
     let step = { wizard: '4/4', titulo: 'Tipo de presentación'};
     this._storage.actualizarPasoActual(step);
 
+    console.log("this.wizard.4: ", this.wizard4);
+    
     this.presentacion = this.wizard4.presentacion;
     this.presupuesto = this.wizard4.presupuesto;
     this.datosContacto = this.wizard4.datosContacto;
+    this.nivel = this.wizard4.nivel;
+    this.plazo = this.wizard4.plazo;
+    this.tipoProyecto = this.wizard4.tipoProyecto;
     this.inicializarFormulario(this.datosContacto); 
 
   }
@@ -55,7 +63,7 @@ export class WizardTipoPresentacionComponent implements OnInit {
       ],
       telefono: [{ value: data.telefono, disabled: false }, [Validators.required]],
       ciudad: [{ value: data.ciudad, disabled: false }, [Validators.required]],
-      pais: [{ value: '', pais: false }, [Validators.required]],
+      pais: [{ value: data.pais, disabled: false }, [Validators.required]],
     });
   }
 
@@ -69,10 +77,19 @@ export class WizardTipoPresentacionComponent implements OnInit {
     const wizard: any = {
       presentacion: this.presentacion,
       presupuesto: this.presupuesto,
-      datosContacto: this.datosContacto
+      datosContacto: this.datosContacto,
+      nivel: this.nivel,
+      plazo: this.plazo,
+      tipoProyecto: this.tipoProyecto
     };
 
-    if(this.presentacion.id > 2) this.guardarForm();
+    console.log("wizard: ", wizard);
+    
+
+    if(this.presentacion.id > 2) {
+      this.guardarForm();
+      wizard.datosContacto = this.datosContacto
+    };
 
     console.log("wizard: ", wizard);
     
@@ -100,8 +117,6 @@ export class WizardTipoPresentacionComponent implements OnInit {
       ciudad: this.formularioContacto.get('ciudad').value,
       pais: this.formularioContacto.get('pais').value
     };
-
-    console.log("formularioContacto: ", this.datosContacto);
     
     
     if(this.formularioContacto.invalid){

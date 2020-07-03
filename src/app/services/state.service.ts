@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
-const initialState = {
+const initialState: any = {
   step: { wizard: '1/1', titulo: "Definición" },
   resumen: false,
   wizard1: {
@@ -11,7 +11,7 @@ const initialState = {
     estado: false,
   },
   wizard2: {
-    especialidad: '',
+    especialidad: {},
     categoria: '',
     subCategoria: '',
     habilidades: [],
@@ -19,7 +19,6 @@ const initialState = {
   },
   wizard3: {
     archivo: {
-      info: '', 
       nombre: '',
       base64: '',
     },
@@ -28,8 +27,11 @@ const initialState = {
   },
   wizard4: {
     presentacion: { titulo: null },
+    nivel: { titulo: null },
+    plazo: {titulo: null},
+    tipoProyecto: { titulo: null },
     presupuesto: 0,
-    dataContacto: {
+    datosContacto: {
       nombre: '',
       apellido: '',
       telefono: '',

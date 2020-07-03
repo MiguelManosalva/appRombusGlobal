@@ -38,6 +38,10 @@
         *ngSwitchCase="1"
         class="_animate__animated animate__fadeIn"
         [presentacion]="presentacion"
+        [tipoProyecto]="tipoProyecto"
+        [nivel]="nivel"
+        (obtenerTipoProyecto)="tipoProyecto = $event"
+        (obtenerNivel)="nivel = $event"
       >
       </app-profesional>
 
@@ -46,6 +50,10 @@
         *ngSwitchCase="2"
         class="animate__animated animate__fadeIn"
         [presentacion]="presentacion"
+        [tipoProyecto]="tipoProyecto"
+        [plazo]="plazo"
+        (obtenerTipoProyecto)="tipoProyecto = $event"
+        (obtenerPlazo)="plazo = $event"
       ></app-project-manager>
 
       <!-- Rombus Ciudad / cercana a mi ubicación  -->
@@ -69,6 +77,7 @@
     <app-rango-precio
       *ngIf="presentacion.titulo"
       [presupuesto]="presupuesto"
+      (obtenerPresupuesto)="presupuesto = $event"
       class="animate__animated animate__fadeIn"
     ></app-rango-precio>
   </div>

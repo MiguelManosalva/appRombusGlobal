@@ -17,6 +17,8 @@ export class ResumenComponent implements OnInit {
     this._storage.state.resumen = true;
 
     console.log(this._storage.state);
+    console.log(this._storage.state.wizard2.especialidad.color);
+    
     
    }
 

@@ -36,6 +36,7 @@
           placeholder="Ingresa monto"
           maxlength="50"
           [(ngModel)]="presupuesto"
+          (ngModelChange)="obtenerPresupuesto.emit(presupuesto)"
           [ngClass]="{
             'is-invalid': !presupuestoValido
           }"

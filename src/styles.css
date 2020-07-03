@@ -26,7 +26,6 @@ button {
   background-color: #123a40;
 }
 
-
 /* Wizard Step */
 .step {
   position: relative;
@@ -59,8 +58,18 @@ button {
   font-size: 40px;
 }
 
+.title-card {
+  font-weight: 700;
+  font-size: 20px;
+}
+
 .sub-title {
   font-weight: 300;
+  font-size: 20px;
+}
+
+.sub-title-bold {
+  font-weight: 500;
   font-size: 20px;
 }
 
@@ -101,6 +110,7 @@ button {
 .card {
   font-weight: 600;
   border-radius: 2px;
+  border: 0px;
 }
 
 .card-esp {
@@ -118,6 +128,11 @@ button {
   height: 140px;
 }
 
+.card-rom-4 {
+  border: 0px;
+  height: 200px;
+}
+
 .card-active {
   background-color: #d01d00;
   transition: 0.2s ease-in;
@@ -133,10 +148,11 @@ button {
 }
 
 .shadow {
-  -webkit-box-shadow: 0px 0px 36px -12px rgba(0, 0, 0, 0.82);
-  -moz-box-shadow: 0px 0px 36px -12px rgba(0, 0, 0, 0.82);
-  box-shadow: 0px 0px 36px -12px rgba(0, 0, 0, 0.82);
+  -webkit-box-shadow: 2px 3px 14px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 3px 14px -4px rgba(0,0,0,0.75);
+  box-shadow: 2px 3px 14px -4px rgba(0,0,0,0.75);
 }
+
 
 .border-categoria {
   border-right: 1px solid #f2f2f2;
@@ -167,6 +183,12 @@ button {
 
 .form-control[readonly] {
   background-color: #eeedec;
+  border-color:  #d2d2d1;
+  opacity: 1;
+}
+
+.form-control[disabled] {
+  background-color: #d0d0d0;
   border-color:  #d2d2d1;
   opacity: 1;
 }
@@ -285,6 +307,20 @@ button {
   background-color: #fff;
   border: 1px solid #c2c2c2;
   font-weight:bold;
+}
+
+/* Resumen */
+
+.edit-wizard{
+  float: right;
+  margin-left: 10px;
+  color: #24a4b4;
+  cursor: pointer;
+}
+
+.vh{
+  visibility: hidden;
+  margin-left: 10px;
 }
 
 /* Footer */

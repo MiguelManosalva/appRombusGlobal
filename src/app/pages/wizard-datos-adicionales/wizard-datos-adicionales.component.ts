@@ -41,10 +41,10 @@ export class WizardDatosAdicionalesComponent implements OnInit {
       comentario: this.comentario,
     };
 
-    if(!this.archivo){
+    if(this.archivo.nombre == ''){
      this.archivoValido = false;
      return
-    }
+    }    
 
     this._storage.state.wizard3 = wizard;
     localStorage.setItem('appRombus', JSON.stringify(this._storage.state));
@@ -59,11 +59,10 @@ export class WizardDatosAdicionalesComponent implements OnInit {
       const fileEntry = archivo.fileEntry as FileSystemFileEntry;
       fileEntry.file((file: File) => {
         this.archivo = {
-          info: file,
+          //info: file,
           nombre: file.name,
           base64: '',
         };
-        console.log('arhicov: ', this.archivo);
       });
     }
   }

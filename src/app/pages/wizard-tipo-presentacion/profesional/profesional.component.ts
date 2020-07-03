@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-profesional',
@@ -9,8 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProfesionalComponent implements OnInit {
 
   @Input() public presentacion: any;
-  public nivel: any = { titulo: null };
-  public tipoProyecto: any = { titulo: null };
+  @Input() public nivel: any;
+  @Input() public tipoProyecto: any;
+  @Output() private obtenerNivel: EventEmitter<any> = new EventEmitter<any>();
+  @Output() private obtenerTipoProyecto: EventEmitter<any> = new EventEmitter<any>();
 
 
   constructor() { }
@@ -18,12 +20,14 @@ export class ProfesionalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public seleccionarNivel(nivel): void {
+  public seleccionarNivel(nivel): void {    
     this.nivel = nivel;
+    this.obtenerNivel.emit(nivel);
   }
 
   public seleccionarTipoProyecto(tipoProyecto):void{
     this.tipoProyecto = tipoProyecto;
+    this.obtenerTipoProyecto.emit(tipoProyecto)
   }
 
 }
