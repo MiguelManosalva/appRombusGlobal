@@ -92,7 +92,7 @@ export class WizardTipoPresentacionComponent implements OnInit {
   
   public guardarForm(): void {
     
-    this.dataContacto = {
+    this.datosContacto = {
       nombre: this.formularioContacto.get('nombre').value,
       apellido: this.formularioContacto.get('apellido').value,
       correo: this.formularioContacto.get('correo').value,
@@ -101,7 +101,7 @@ export class WizardTipoPresentacionComponent implements OnInit {
       pais: this.formularioContacto.get('pais').value
     };
 
-    console.log("formularioContacto: ", this.dataContacto);
+    console.log("formularioContacto: ", this.datosContacto);
     
     
     if(this.formularioContacto.invalid){
